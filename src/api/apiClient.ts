@@ -5,7 +5,7 @@ import axios, {
 } from "axios";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "https://teamsproject.teamcomputers.com/wsbackend/v1/",
+  baseURL: "localhost:5173/",
 });
 
 apiClient.interceptors.request.use(
