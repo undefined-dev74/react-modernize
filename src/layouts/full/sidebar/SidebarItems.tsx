@@ -1,4 +1,3 @@
-import React from "react";
 import Menuitems from "./MenuItems";
 import { Box, List } from "@mui/material";
 import NavItem from "./NavItem";

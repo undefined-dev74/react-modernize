@@ -1,7 +1,4 @@
 import { CacheProvider } from "@emotion/react";
-
-// Next.js imports
-
 // MUI (formerly Material-UI) imports
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,21 +6,15 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Custom imports
 import createEmotionCache from "./createEmotionCache";
 
-import { Provider } from "react-redux";
-
-import { store } from "./redux/store";
 import CustomLoader from "./components/shared/CustomLoader";
 import { baselightTheme } from "./theme/DefaultColors";
-import { ReactQueryProvider } from "./queries/provider";
 import ScrollTop from "./components/shared/ScrollTop";
 import ThemeRoutes from "./routes";
 import AuthProvider from "./context/AuthProvider";
-import ThemeCustomization from "./themes";
-
-// Client-side cache, shared for the whole session of the user in the browser.
 
 const App = () => {
   const theme = baselightTheme;
+  // Client-side cache, shared for the whole session of the user in the browser.
   const clientSideEmotionCache = createEmotionCache();
 
   return (
@@ -34,7 +25,9 @@ const App = () => {
 
         {/* <ScrollTop> */}
         <AuthProvider>
-          <ThemeRoutes />
+          <ScrollTop>
+            <ThemeRoutes />
+          </ScrollTop>
         </AuthProvider>
         {/* </ScrollTop> */}
         <CustomLoader />

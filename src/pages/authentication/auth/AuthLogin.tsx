@@ -1,10 +1,5 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import CustomTextField from "@/components/forms/theme-elements/CustomTextField";
 import { Formik } from "formik";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
 import {
   Box,
   Button,
@@ -41,8 +36,10 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
 
   const handleLogin = async (credentials: LoginCredentials) => {
     try {
-      let status = await loginMutation.mutateAsync(credentials);
+      const status = await loginMutation.mutateAsync(credentials);
       // Login successful, perform any necessary actions
+      localStorage.setItem("token", status.data.authToken);
+      console.log(status);
       router("/dashboard");
     } catch (error) {
       // Handle login error
@@ -184,11 +181,6 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
                 Forgot Password?
               </Typography>
             </Stack>
-            {errors.submit && (
-              <Box sx={{ mt: 3 }}>
-                <FormHelperText error>{errors.submit}</FormHelperText>
-              </Box>
-            )}
 
             <Box sx={{ mt: 2 }}>
               <Button

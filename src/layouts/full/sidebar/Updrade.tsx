@@ -1,10 +1,10 @@
 import { Box, Typography, Button, Link } from "@mui/material";
-import img1 from "../../../../public/images/products/empty-shopping-bag.gif";
+import img1 from "=/images/products/empty-shopping-bag.gif";
 
 export const Upgrade = () => {
   return (
     <Box
-      display={"flex"}
+      display="flex"
       alignItems="center"
       gap={2}
       sx={{ m: 3, p: 3, bgcolor: `${"primary.light"}`, borderRadius: "8px" }}

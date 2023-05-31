@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+
 import { Grid, Box, Card, Typography, Stack } from "@mui/material";
 import Link from "next/link";
 import AuthRegister from "../auth/AuthRegister";

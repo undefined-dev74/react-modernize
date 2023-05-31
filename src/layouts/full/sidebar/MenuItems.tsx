@@ -47,7 +47,7 @@ const Menuitems = [
     id: uniqueId(),
     title: "Orders",
     icon: IconListDetails,
-    href: "/authentication/login",
+    href: "/manage/orders",
   },
   {
     id: uniqueId(),

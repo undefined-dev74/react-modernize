@@ -13,20 +13,21 @@ export type LoginCredentials = {
 };
 
 type AuthResponse = {
-  token: string;
-  user: User;
+  data: {
+    authToken: string;
+  };
 };
 
 export async function login(
-  credentials: LoginCredentials
+  credentials: LoginCredentials,
 ): Promise<AuthResponse> {
   const { email, password } = credentials;
   let form = new FormData();
   form.append("email", email);
   form.append("password", password);
-  const response: AxiosResponse<AuthResponse> = await axios.post(
+  const response: AxiosResponse<AuthResponse> = await apiClient.post(
     "user/login",
-    form
+    form,
   );
   return response.data;
 }
@@ -34,7 +35,7 @@ export async function login(
 export async function sendOtp(email: string): Promise<any> {
   const response: AxiosResponse<AuthResponse> = await apiClient.post(
     "/api/sendOtp",
-    email
+    email,
   );
   return response.data;
 }

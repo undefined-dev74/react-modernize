@@ -1,17 +1,11 @@
-import Link from "next/link";
-import type { ReactElement } from "react";
-import { Grid, Box, Card, Stack, Typography } from "@mui/material";
+import { Grid, Box, Card, Typography } from "@mui/material";
 
 // ..@... components imports
 import PageContainer from "@/components/container/PageContainer";
 import Logo from "@/layouts/full/shared/logo/Logo";
 import AuthLogin from "../auth/AuthLogin";
-import BlankLayout from "@/layouts/blank/BlankLayout";
 
 const Login2 = () => {
-  const handleLogin = () => {
-    signIn();
-  };
   return (
     <PageContainer title="Login" description="this is Login page">
       <Box

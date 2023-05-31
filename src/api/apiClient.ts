@@ -1,6 +1,5 @@
 import axios, {
   AxiosInstance,
-  AxiosRequestConfig,
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
@@ -24,7 +23,7 @@ apiClient.interceptors.request.use(
     // Handle request error
 
     return Promise.reject(error);
-  }
+  },
 );
 
 apiClient.interceptors.response.use(
@@ -42,7 +41,7 @@ apiClient.interceptors.response.use(
     // Handle response error
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export { apiClient };

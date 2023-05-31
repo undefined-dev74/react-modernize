@@ -5,11 +5,13 @@ import { lazy } from "react";
 import ProtectedRoute from "./ProtectedRoute";
 import FullLayout from "../layouts/full/FullLayout";
 import Loadable from "@/components/shared/Loadable";
+// import Orders from "@/pages/Orders";
 // import PageNotFound from "src/pages/NotFound";
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import("../pages/dashboard")));
 const PageNotFound = Loadable(lazy(() => import("../pages/NotFound")));
+const Orders = Loadable(lazy(() => import("../pages/Orders")));
 
 // render - sample page
 
@@ -31,26 +33,11 @@ const MainRoutes = {
           path: "dashboard",
           element: <DashboardDefault />,
         },
-        // {
-        //   path: 'sample-page',
-        //   element: <SamplePage />,
-        // },
-        // {
-        //   path: 'shadow',
-        //   element: <Shadow />,
-        // },
-        // {
-        //   path: 'typography',
-        //   element: <Typography />,
-        // },
-        // {
-        //   path: 'icons/ant',
-        //   element: <AntIcons />,
-        // },
-        // {
-        //   path: 'manage/list',
-        //   element: <Lists />,
-        // },
+        {
+          path: "manage/orders",
+          element: <Orders />,
+        },
+
         {
           path: "*",
           element: <PageNotFound />,
