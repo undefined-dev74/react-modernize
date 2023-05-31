@@ -1,15 +1,15 @@
-import type { ReactElement } from "react";
+import { ReactElement, lazy } from "react";
 import { Grid, Box } from "@mui/material";
 
 // components
-
-import YearlyBreakup from "./YearlyBreakup";
-import MonthlyEarnings from "./MonthlyEarnings";
-import RecentTransactions from "./RecentTransactions";
-import ProductPerformance from "./ProductPerformance";
-import Blog from "@/pages/dashboard/Blog";
+const SalesOverview = lazy(() => import("./SalesOverview"));
+const YearlyBreakup = lazy(() => import("./YearlyBreakup"));
+const MonthlyEarnings = lazy(() => import("./MonthlyEarnings"));
+const RecentTransactions = lazy(() => import("./RecentTransactions"));
+const ProductPerformance = lazy(() => import("./ProductPerformance"));
+const Blog = lazy(() => import("./Blog"));
 import PageContainer from "@/components/container/PageContainer";
-import SalesOverview from "./SalesOverview";
+// import SalesOverview from "./SalesOverview";
 
 export default function Dashboard() {
   return (
